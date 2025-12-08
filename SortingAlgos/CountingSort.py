@@ -1,0 +1,22 @@
+# Counting Sort Algorithm
+# Time: O(K + N), Space: O(K) where K is the range of the data
+
+F = [5, 3, 2, 1, 3, 3, 7, 2, 2]
+print(F)
+
+def countingSort(arr):
+    maxx = max(arr)
+    counts = [0] * (maxx + 1)
+    
+    for x in arr:
+        counts[x] += 1
+        
+    i = 0
+    for c in range(maxx + 1):
+        while counts[c] > 0:
+            arr[i] = c
+            i += 1
+            counts[c] -= 1
+            
+countingSort(F)
+print(F)

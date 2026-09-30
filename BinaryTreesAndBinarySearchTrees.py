@@ -12,7 +12,7 @@ class TreeNode:
 # Initializing Binary Tree 
 #       1
 #   2       3
-# 4   5  10
+# 4   5  10   11
 
 A = TreeNode(1)
 B = TreeNode(2)
@@ -20,12 +20,14 @@ C = TreeNode(3)
 D = TreeNode(4)
 E = TreeNode(5)
 F = TreeNode(10)
+G = TreeNode(11)
 
 A.left = B
 B.left = D
 B.right = E
 A.right = C
 C.left = F
+C.right = G
 
 # print(A)
 

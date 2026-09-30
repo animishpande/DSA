@@ -1,3 +1,6 @@
+import math
+
+
 A = [-3, -1, 0, 1, 4, 7]
 
 # Naive O(n) solution
@@ -45,3 +48,37 @@ def binary_search_condition(arr):
         return L
     
 print(binary_search_condition(B))
+
+
+'''
+pseudo code for binary search algorithm
+function binary_search(A, n, T) is
+    L := 0
+    R := n - 1
+    while L <= R do:
+        m := L + floor((R - L) // 2)
+        if A[m] == T then
+            return m
+        else if A[m] < T then
+            L := m + 1
+        else 
+            R := m - 1
+    return unsuccessful
+'''
+X = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+def binarySearch(arr, target):
+    n = len(arr)
+    L = 0
+    R = n - 1
+
+    while L <= R:
+        m = L + math.floor((R - L) // 2)
+        if arr[m] < target:
+            L = m + 1
+        elif arr[m] > target:
+            R = m - 1
+        else:
+            return m
+    return "not found"
+
+print(binarySearch(X, -1))

@@ -38,3 +38,72 @@ def merge_sort(arr):
 print(D)       
 merge_sort(D)
 print(D)
+
+
+
+'''
+Pseudo Code for Merge Sort
+MERGE_SORT(array):
+    if length of array <= 1:
+        return array
+    
+    mid = length of array / 2
+
+    left = MERGE_SORT(array left of mid)
+    right = MERGE_SORT(array right of mid)
+
+    return MERGE(left, right)
+
+MERGE(left, right):
+    result = []
+
+    while both are non empty:
+        if left[i] <= right[j]:
+            add left[i]
+        else:
+            add right[j]
+
+    dump remaining elements to whichever side isn't empty into result
+
+    return result
+'''
+X = [2, 4, 3, 1, 8, 7, 9, 5]
+def merge(left, right):
+    result = []
+    i = j = 0
+
+    while i < len(left) and j < len(right):
+        if (left[i] <= right[j]):
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+        
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+
+def mergeSort(arr):
+    if len(arr) <= 1:
+        return arr
+    
+    mid = len(arr) // 2
+    left = mergeSort(arr[:mid])
+    right = mergeSort(arr[mid:])
+
+    return merge(left, right)
+    
+Y = mergeSort(X)
+print(X)
+print(Y)
+
+'''
+merge_sort([3, 1, 2])
+├── merge_sort([3])        ← base case, returns [3]
+├── merge_sort([1, 2])
+│   ├── merge_sort([1])   ← base case, returns [1]
+│   ├── merge_sort([2])   ← base case, returns [2]
+│   └── merge([1], [2])  → [1, 2]
+└── merge([3], [1, 2])   → [1, 2, 3]  ✅
+'''

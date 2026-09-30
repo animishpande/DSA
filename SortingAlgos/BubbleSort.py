@@ -14,3 +14,21 @@ def bubble_sort(arr):
                 
 bubble_sort(A)
 print(A)
+
+'''
+Pseudo Code for bubble sort
+for i from 1 to N
+    for j from 0 to N - 1
+        if a[j] > a[j + 1]
+            swap(a[j], a[j + 1])
+'''
+arr = [2, 3, 9, 5, 4, 8, 1]
+def bubbleSort(list):
+    n = len(list)
+    for i in range(n):
+        for j in range(0, n - 1):
+            if list[j] > list[j + 1]:
+                list[j], list[j + 1] = list[j + 1], list[j]
+    
+bubbleSort(arr)
+print(arr)

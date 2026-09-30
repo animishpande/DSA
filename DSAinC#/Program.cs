@@ -33,6 +33,7 @@ class Example
             Console.WriteLine("Values copy: {0}", val);
         }
 
+
         // QUEUE DATA STRUCTURE IMPLEMENTATION
         // Queue is a FIFO data structure. FIFO stands for First In First Out, like a queue for a bus
         Queue<string> myQ = new Queue<string>();
@@ -60,6 +61,30 @@ class Example
         // LINKEDLIST IMPLEMENTATION
         // Linked list is a data structure where each node has a value and link to the next node
         // There are mainly three types of LL -> Singly LL, Doubly LL and Circular LL
-        
+        LinkedList<string> sentence = new LinkedList<string>();
+        // Adding element at the beginning
+        sentence.AddFirst("Apple");
+        // Adding element at the end
+        sentence.AddLast("Mango");
+        sentence.AddLast("Banana");
+        sentence.AddLast("Kiwi");
+        sentence.AddLast("Jamun");
+        sentence.AddLast("Grapes");
+        // Remove first element
+        sentence.RemoveFirst();
+        // Remove last element
+        sentence.RemoveLast();
+        // Find the last occurence of an element
+        LinkedListNode<string>? curr = sentence.FindLast("Mango");
+        // Add element after a node
+        sentence.AddAfter(curr, "Orange");
+        // Find a node
+        curr = sentence.Find("Kiwi");
+        // Add element before a node
+        sentence.AddBefore(curr, "Malta");
+        // Remove the first occurence of an element from the list
+        sentence.Remove("Banana");
+        Console.WriteLine("\nElements in LinkedList:");
+        foreach(var i in sentence) { Console.WriteLine(i); }
     }
 }

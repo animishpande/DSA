@@ -13,3 +13,29 @@ def selection_sort(arr):
 
 selection_sort(C)
 print(C)
+
+
+'''
+Pseudo Code for Selection Sort
+for (j = 0; j < n - 1; j++)
+    int iMin = j;
+    for (i = j + 1; i < n; i++)
+        if (a[i] < a[iMin])
+            iMin = i
+    if (iMin != j)
+        swap(a[j], a[iMin])
+'''
+A = [8,5,3,4,9,2,1]
+
+def selectionSort(arr):
+    n = len(arr)
+    for j in range(0, n - 1):
+        iMin = j
+        for i in range(j + 1, n):
+            if (arr[i] < arr[iMin]):
+                iMin = i
+        if iMin != j:
+            arr[j], arr[iMin] = arr[iMin], arr[j]
+
+selectionSort(A)
+print(A)

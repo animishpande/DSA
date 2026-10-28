@@ -12,7 +12,7 @@ public class TwoSum
         var fin = new List<int>();
         for(int i = 0; i < nums.Length; i++)
         {
-            for(int j = 1; j < nums.Length; j++)
+            for(int j = i + 1; j < nums.Length; j++)
             {
                 if (i != j && nums[i] + nums[j] == target && fin.Count == 0)
                 {
